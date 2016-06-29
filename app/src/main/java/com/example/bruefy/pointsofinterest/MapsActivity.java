@@ -1,26 +1,11 @@
 package com.example.bruefy.pointsofinterest;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.location.Criteria;
-import android.location.Location;
-import android.location.LocationManager;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
-
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-
 import android.view.View;
+import android.widget.Button;
 
-
-import com.google.android.gms.games.achievement.Achievements;
-import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -50,14 +35,36 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         mapFragment.getMapAsync(this);
 
 
-
     }
 
 
+    public void ButtonClick(View v){
+        Button button = (Button) findViewById(v.getId());
+
+        Intent maps = new Intent(getApplicationContext(), MapsActivity.class);
+        Intent create = new Intent(getApplicationContext(), CreateActivity.class);
+        Intent orte = new Intent(getApplicationContext(), Ortliste.class);
+        Intent fav = new Intent(getApplicationContext(), Favoritenliste.class);
 
 
 
+        switch(button.getText().toString()){
+            case "1":
+                startActivity(maps);
+                break;
+            case "2":
+                startActivity(create);
+                break;
+            case "3":
+                startActivity(orte);
+                break;
+            default:
+                startActivity(fav);
+                break;
+        }
 
+
+    }
 
     /**
      * Manipulates the map once available.
@@ -87,12 +94,15 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
 
         LatLng currenLocation = new LatLng(-150, 200);
+        String title = "test";
 
-        meineOrte.add("Test");
+        Ort ort1 = new Ort();
+        ort1.title = title;
+        ort1.coordinates = currenLocation;
 
 
-        mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
-        mMap.addMarker(new MarkerOptions().position(currenLocation).title("Test"));
+        mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+        mMap.addMarker(new MarkerOptions().position(currenLocation).title(title));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(currenLocation));
     }
 

@@ -1,15 +1,22 @@
 package com.example.bruefy.pointsofinterest;
 
+<<<<<<< HEAD
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.FragmentTransaction;
+=======
+import android.content.Intent;
+>>>>>>> origin/master
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+<<<<<<< HEAD
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
+=======
+>>>>>>> origin/master
 
 public class CreateActivity extends AppCompatActivity {
 
@@ -23,6 +30,7 @@ public class CreateActivity extends AppCompatActivity {
         setContentView(R.layout.activity_create);
     }
 
+<<<<<<< HEAD
     public void showDialogOnButtonClick(View v){
         button = (Button)findViewById(R.id.datebutton);
 
@@ -62,4 +70,35 @@ public class CreateActivity extends AppCompatActivity {
         }
     };
 
+=======
+
+
+    public void ButtonClick(View v){
+        Button button = (Button) findViewById(v.getId());
+
+        Intent maps = new Intent(getApplicationContext(), MapsActivity.class);
+        Intent create = new Intent(getApplicationContext(), CreateActivity.class);
+        Intent orte = new Intent(getApplicationContext(), Ortliste.class);
+        Intent fav = new Intent(getApplicationContext(), Favoritenliste.class);
+
+
+
+        switch(button.getText().toString()){
+            case "1":
+                startActivity(maps);
+                break;
+            case "2":
+                startActivity(create);
+                break;
+            case "3":
+                startActivity(orte);
+                break;
+            default:
+                startActivity(fav);
+                break;
+        }
+
+
+    }
+>>>>>>> origin/master
 }
