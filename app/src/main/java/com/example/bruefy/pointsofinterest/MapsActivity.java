@@ -9,21 +9,11 @@ import android.location.LocationManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-<<<<<<< HEAD
-=======
-
-import android.view.View;
-
->>>>>>> origin/master
 
 import com.google.android.gms.games.achievement.Achievements;
 import com.google.android.gms.location.LocationListener;
@@ -55,19 +45,9 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-<<<<<<< HEAD
 
     }
 
-=======
-
-
-    }
-
-
-
-
->>>>>>> origin/master
 
 
 
