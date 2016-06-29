@@ -19,8 +19,8 @@
         android:layout_alignParentStart="true"
         android:editable="false" />
 
-    <TextView
-        android:layout_width="wrap_content"
+    <EditText
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:id="@+id/titel"
         android:layout_alignParentTop="true"
@@ -37,20 +37,21 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
+    <EditText
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:id="@+id/ort"
         android:layout_alignTop="@+id/o"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:editable="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Beginn"
         android:id="@+id/b"
-        android:layout_marginTop="45dp"
-        android:layout_below="@+id/o"
+        android:layout_marginTop="43dp"
+        android:layout_below="@+id/ort"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -63,18 +64,22 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <DatePicker
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:id="@+id/dateBeginn"
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Datum auswählen"
+        android:id="@+id/datebutton"
         android:layout_alignTop="@+id/b"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignLeft="@+id/ort"
+        android:layout_alignStart="@+id/ort" />
 
-    <DatePicker
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:id="@+id/dateEnde"
-        android:layout_alignTop="@+id/e"
-        android:layout_centerHorizontal="true" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Datum auswählen"
+        android:id="@+id/datebutton2"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/datebutton"
+        android:layout_alignStart="@+id/datebutton" />
 
 </RelativeLayout>
