@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     AdapterView.OnItemClickListener menuClickListener = new AdapterView.OnItemClickListener(){
       public void onItemClick(AdapterView parent, View v, int position, long id){
           Intent maps = new Intent(getApplicationContext(), MapsActivity.class);
-          Intent create = new Intent(getApplicationContext(), MainActivity.class);
+          Intent create = new Intent(getApplicationContext(), CreateActivity.class);
           Intent orte = new Intent(getApplicationContext(), Ortliste.class);
           Intent fav = new Intent(getApplicationContext(), MainActivity.class);
           Intent favorite = new Intent(getApplicationContext(), MainActivity.class);
@@ -50,6 +50,9 @@ public class MainActivity extends AppCompatActivity {
           switch(selected){
               case Map:
                   startActivity(maps);
+                  break;
+              case Create:
+                  startActivity(create);
                   break;
               case ortliste:
                   startActivity(orte);
