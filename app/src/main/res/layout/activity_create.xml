@@ -68,7 +68,7 @@
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
-        >
+        android:weightSum="1">
 
     <TextView
         android:layout_width="wrap_content"
@@ -81,7 +81,7 @@
         android:editable="false" />
 
     <EditText
-        android:layout_width="200dp"
+        android:layout_width="353dp"
         android:layout_height="wrap_content"
         android:id="@+id/titel"
         android:layout_alignParentTop="true"
@@ -99,56 +99,40 @@
         android:layout_alignParentStart="true" />
 
     <EditText
-        android:layout_width="200dp"
+        android:layout_width="353dp"
         android:layout_height="wrap_content"
         android:id="@+id/ort"
         android:layout_alignTop="@+id/o"
         android:layout_centerHorizontal="true"
         android:editable="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
+        <Button
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Beginn"
-        android:id="@+id/b"
-        android:layout_marginTop="43dp"
-        android:layout_below="@+id/ort"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ende"
-        android:id="@+id/e"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Datum auswählen"
         android:id="@+id/datebutton"
         android:layout_alignTop="@+id/b"
         android:layout_alignLeft="@+id/ort"
-        android:layout_alignStart="@+id/ort" />
+        android:layout_alignStart="@+id/ort"
+        android:layout_gravity="center_horizontal" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Datum auswählen"
+        android:text="Ende"
         android:id="@+id/datebutton2"
         android:layout_centerVertical="true"
         android:layout_alignLeft="@+id/datebutton"
-        android:layout_alignStart="@+id/datebutton" />
+        android:layout_alignStart="@+id/datebutton"
+        android:layout_gravity="center_horizontal" />
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="New Button"
+            android:text="Hinzufügen"
             android:id="@+id/button"
-            android:layout_gravity="center_horizontal" />
+            android:layout_weight="0.17"
+            android:background="@color/colorPrimary" />
     </LinearLayout>
 
 </RelativeLayout>
