@@ -8,6 +8,8 @@ import java.util.List;
  */
 public class Bibliothek {
 
-    public static List<Orte> Orte = new ArrayList<Orte>();
+    public static List<Ort> Orte = new ArrayList<Ort>();
+
+
 
 }

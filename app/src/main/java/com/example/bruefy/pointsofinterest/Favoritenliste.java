@@ -4,19 +4,14 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ListView;
 
-public class Ortliste extends AppCompatActivity {
+public class Favoritenliste extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ortliste);
-
-        fillOrte();
-
+        setContentView(R.layout.activity_favoriten);
     }
 
     public void ButtonClick(View v){
@@ -45,24 +40,5 @@ public class Ortliste extends AppCompatActivity {
         }
 
 
-    }
-
-    public void fillOrte(){
-        MapsActivity m = new MapsActivity();
-        ArrayAdapter menuadapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
-        ListView ortliste = (ListView) findViewById(R.id.ortliste);
-
-
-        if(Bibliothek.Orte.isEmpty()){
-            menuadapter.add("Noch keine Ort Hinzugefügt");
-        }else{
-            for(int i = 0; i <= Bibliothek.Orte.size(); i++){
-                menuadapter.add(Bibliothek.Orte.get(i));
-            }
-        }
-
-
-
-        ortliste.setAdapter(menuadapter);
     }
 }

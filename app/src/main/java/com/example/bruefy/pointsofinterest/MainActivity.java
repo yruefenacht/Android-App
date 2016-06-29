@@ -12,8 +12,8 @@ public class MainActivity extends AppCompatActivity {
 
     private final static String Map = "Map";
     private final static String Create = "Eriegnis erstellen";
-    private final static String ortliste = "Orte und Ereignisse";
-    private final static String favorite = "Favoriten";
+    private final static String ortliste = "Ort und Ereignisse";
+    private final static String favorite = "Favoritenliste";
 
 
     @Override
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
           Intent create = new Intent(getApplicationContext(), CreateActivity.class);
           Intent orte = new Intent(getApplicationContext(), Ortliste.class);
           Intent fav = new Intent(getApplicationContext(), MainActivity.class);
-          Intent favorite = new Intent(getApplicationContext(), MainActivity.class);
+
 
           String selected = parent.getItemAtPosition(position).toString();
 

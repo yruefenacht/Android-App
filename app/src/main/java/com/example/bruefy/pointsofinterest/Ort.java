@@ -5,7 +5,7 @@ import com.google.android.gms.maps.model.LatLng;
 /**
  * Created by bruefy on 29.06.2016.
  */
-public class Orte {
+public class Ort {
 
     public String title;
     String getTitle(){ return title;}
