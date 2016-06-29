@@ -54,7 +54,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity android:name=".Ortliste"></activity>
+=======
+        <activity android:name=".CreateActivity"></activity>
+>>>>>>> origin/master
     </application>
 
 </manifest>
