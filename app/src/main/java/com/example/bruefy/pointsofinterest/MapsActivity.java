@@ -101,7 +101,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         ort1.coordinates = currenLocation;
 
 
-        mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+        mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
         mMap.addMarker(new MarkerOptions().position(currenLocation).title(title));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(currenLocation));
     }
