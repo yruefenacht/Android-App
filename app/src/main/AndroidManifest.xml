@@ -53,6 +53,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity android:name=".MainActivity" />
         <activity
             android:name=".Ortliste"
@@ -63,6 +64,16 @@
         <activity
             android:name=".Favoritenliste"
             android:label="Favoriten"></activity>
+=======
+<<<<<<< HEAD
+        <activity android:name=".Favorite"></activity>
+=======
+
+        <activity android:name=".Ortliste"></activity>
+        <activity android:name=".CreateActivity"></activity>
+
+>>>>>>> origin/master
+>>>>>>> origin/master
     </application>
 
 </manifest>
