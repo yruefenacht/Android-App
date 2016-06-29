@@ -10,11 +10,11 @@ import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private final static String Map = "Map Ansicht Orte";
+    private final static String Map = "Map";
     private final static String Create = "Eriegnis erstellen";
-    private final static String ortliste = "Listenansicht Orte";
+    private final static String ortliste = "Orte und Ereignisse";
     private final static String favorite = "Favoriten";
-    private final static String fav = "Ort favorisieren";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
         menuadapter.add(ortliste);
         menuadapter.add(Create);
         menuadapter.add(favorite);
-        menuadapter.add(fav);
         lv.setAdapter(menuadapter);
     }
 

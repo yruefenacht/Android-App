@@ -23,10 +23,8 @@ public class Ortliste extends AppCompatActivity {
         ArrayAdapter menuadapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
         ListView ortliste = (ListView) findViewById(R.id.ortliste);
 
-        for(String listelement : m.meineOrte){
-            menuadapter.add(listelement);
-        }
-
+        for(String temp : Bibliothek.Orte)
+        menuadapter.
 
         ortliste.setAdapter(menuadapter);
     }
