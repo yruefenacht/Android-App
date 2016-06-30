@@ -6,6 +6,48 @@
 
     tools:context="com.example.bruefy.pointsofinterest.CreateActivity">
 
+<<<<<<< HEAD
+=======
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/colorPrimary">
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_weight=".25"
+            android:padding="30dp"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:onClick="ButtonClick"
+            android:id="@+id/mapbutton"
+            android:background="@color/colorPrimary"
+            android:drawableLeft="@drawable/ic_person_pin_circle_black_24dp"/>
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+$            android:layout_height="wrap_content"
+            android:layout_weight=".25"
+            android:padding="30dp"
+            android:text="2"
+            android:onClick="ButtonClick"
+            android:id="@+id/createbutton"
+            android:background="@color/colorPrimary"
+            android:drawableLeft="@drawable/ic_add_box_white_24dp"/>
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".25"
+            android:padding="30dp"
+            android:text="3"
+            android:id="@+id/listbutton"
+            android:onClick="ButtonClick"
+            android:background="@color/colorPrimary"
+>>>>>>> origin/master
 
 
     <LinearLayout

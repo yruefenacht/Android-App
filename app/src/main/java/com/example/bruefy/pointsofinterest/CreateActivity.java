@@ -1,5 +1,11 @@
 package com.example.bruefy.pointsofinterest;
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/master
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
@@ -11,6 +17,21 @@ import android.location.Geocoder;
 import android.os.AsyncTask;
 import android.os.Environment;
 import android.support.v7.app.ActionBarActivity;
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> origin/master
+import android.app.DatePickerDialog;
+import android.app.Dialog;
+import android.app.FragmentTransaction;
+import android.content.Intent;
+<<<<<<< HEAD
+=======
+>>>>>>> origin/master
+>>>>>>> origin/master
+>>>>>>> origin/master
+>>>>>>> origin/master
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -37,8 +58,27 @@ import java.util.Locale;
 
 public class CreateActivity extends ActionBarActivity {
 
+<<<<<<< HEAD
 
 
+=======
+=======
+<<<<<<< HEAD
+import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.Toast;
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> origin/master
+>>>>>>> origin/master
+>>>>>>> origin/master
+
+
+    Button button;
+    int day_x,month_x,year_x;
+
+>>>>>>> origin/master
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +95,25 @@ public class CreateActivity extends ActionBarActivity {
     }
 
 
+<<<<<<< HEAD
+=======
+    public final ThreadLocal<DatePickerDialog.OnDateSetListener> dpickerListener
+            = new ThreadLocal<DatePickerDialog.OnDateSetListener>() {
+        @Override
+        protected DatePickerDialog.OnDateSetListener initialValue() {
+            return new DatePickerDialog.OnDateSetListener() {
+                @Override
+                public void onDateSet(DatePicker view, int dayOfMonth, int monthOfYear, int year) {
+                    year_x = year;
+                    month_x = monthOfYear;
+                    day_x = dayOfMonth;
+                    Toast.makeText(CreateActivity.this, day_x + "/" + month_x + "/" + year_x, Toast.LENGTH_LONG).show();
+                }
+            };
+        }
+    };
+
+>>>>>>> origin/master
 
     public void ButtonClick(View v){
         Button button = (Button) findViewById(v.getId());
@@ -87,6 +146,12 @@ public class CreateActivity extends ActionBarActivity {
 
 
     }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/master
     Calendar myCalendar = Calendar.getInstance();
     private String pressedButton;
 
@@ -302,4 +367,11 @@ public class CreateActivity extends ActionBarActivity {
 
 
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> origin/master
+>>>>>>> origin/master
+>>>>>>> origin/master
+>>>>>>> origin/master
 }
