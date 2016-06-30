@@ -15,8 +15,8 @@
 
         <Button
             android:layout_width="fill_parent"
-            android:layout_weight=".25"
-            android:padding="30dp"
+            android:layout_weight=".33"
+            android:padding="50dp"
             android:layout_height="wrap_content"
             android:text="1"
             android:onClick="ButtonClick"
@@ -24,22 +24,13 @@
             android:background="@color/colorPrimary"
             android:drawableLeft="@drawable/ic_person_pin_circle_black_24dp"/>
 
-        <Button
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight=".25"
-            android:padding="30dp"
-            android:text="2"
-            android:onClick="ButtonClick"
-            android:id="@+id/createbutton"
-            android:background="@color/colorPrimary"
-            android:drawableLeft="@drawable/ic_add_box_black_24dp"/>
+
 
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_weight=".25"
-            android:padding="30dp"
+            android:layout_weight=".33"
+            android:padding="50dp"
             android:text="3"
             android:id="@+id/listbutton"
             android:onClick="ButtonClick"
@@ -49,8 +40,8 @@
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_weight=".25"
-            android:padding="30dp"
+            android:layout_weight=".33"
+            android:padding="50dp"
             android:text="4"
             android:id="@+id/favbutton"
             android:onClick="ButtonClick"

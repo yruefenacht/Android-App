@@ -1,30 +1,21 @@
 package com.example.bruefy.pointsofinterest;
 
-<<<<<<< HEAD
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.location.Geocoder;
+import android.os.AsyncTask;
 import android.os.Environment;
 import android.support.v7.app.ActionBarActivity;
-=======
-<<<<<<< HEAD
-import android.app.DatePickerDialog;
-import android.app.Dialog;
-import android.app.FragmentTransaction;
-=======
-import android.content.Intent;
->>>>>>> origin/master
->>>>>>> origin/master
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-<<<<<<< HEAD
 import android.widget.DatePicker;
 import android.widget.EditText;
 
@@ -46,19 +37,7 @@ import java.util.Locale;
 
 public class CreateActivity extends ActionBarActivity {
 
-=======
-<<<<<<< HEAD
-import android.widget.DatePicker;
-import android.widget.EditText;
-import android.widget.Toast;
-=======
->>>>>>> origin/master
->>>>>>> origin/master
 
-
-    Button button;
-    int day_x,month_x,year_x;
-    static final int DILOG_ID = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,47 +54,6 @@ import android.widget.Toast;
 
     }
 
-<<<<<<< HEAD
-    public void showDialogOnButtonClick(View v){
-        button = (Button)findViewById(R.id.datebutton);
-
-
-
-        /*button.setOnClickListener(
-            new View.OnClickListener() {
-                @Override
-                public void onCreate(View v) {
-                    showDialog(DILOG_ID);
-                }
-            }
-
-        );*/
-    }
-
-    @Override
-    protected Dialog onCreateDialog(int id) {
-        if(id == DILOG_ID)
-            return new DatePickerDialog(this, dpickerListener.get(), day_x,month_x,year_x);
-        return null;
-    }
-
-    public final ThreadLocal<DatePickerDialog.OnDateSetListener> dpickerListener
-            = new ThreadLocal<DatePickerDialog.OnDateSetListener>() {
-        @Override
-        protected DatePickerDialog.OnDateSetListener initialValue() {
-            return new DatePickerDialog.OnDateSetListener() {
-                @Override
-                public void onDateSet(DatePicker view, int dayOfMonth, int monthOfYear, int year) {
-                    year_x = year;
-                    month_x = monthOfYear;
-                    day_x = dayOfMonth;
-                    Toast.makeText(CreateActivity.this, day_x + "/" + month_x + "/" + year_x, Toast.LENGTH_LONG).show();
-                }
-            };
-        }
-    };
-
-=======
 
 
     public void ButtonClick(View v){
@@ -149,7 +87,6 @@ import android.widget.Toast;
 
 
     }
-<<<<<<< HEAD
     Calendar myCalendar = Calendar.getInstance();
     private String pressedButton;
 
@@ -219,6 +156,7 @@ import android.widget.Toast;
         String ende = endeb.getText().toString();
 
         if(createcounter >= 3){
+
             LatLng address = findCoordinates(location);
             if(ortfound){
                 //ERFOLG!!!
@@ -228,10 +166,11 @@ import android.widget.Toast;
                 Bibliothek.ende.add(ende);
 
                 //Schreib mir die 4 Werte in ein Text-File
-                //WriteInTextFile(title, start, ende, address);
+                WriteInTextFile(title, start, ende, address);
 
 
                 Intent map = new Intent(getApplicationContext(), MapsActivity.class);
+
                 startActivity(map);
                 createcounter = 0;
                 ortfound = false;
@@ -263,9 +202,13 @@ import android.widget.Toast;
 
     }
 
+
+
     private static final String TAG = CreateActivity.class.getSimpleName();
 
     public LatLng findCoordinates(String location){
+
+
 
         Geocoder gc = new Geocoder(this);
         List<android.location.Address> list = null;
@@ -316,7 +259,7 @@ import android.widget.Toast;
         }
         String saveText = title;
 
-        Save (file, saveText);
+        //Save (file, saveText);
 
     }
 
@@ -359,7 +302,4 @@ import android.widget.Toast;
 
 
 
-=======
->>>>>>> origin/master
->>>>>>> origin/master
 }

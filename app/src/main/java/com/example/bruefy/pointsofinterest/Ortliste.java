@@ -55,6 +55,7 @@ public class Ortliste extends AppCompatActivity {
                                 }
                                 if(add){
                                     Bibliothek.favoriten.add(selected);
+                                    Toast.makeText(getApplicationContext(), "Zu Favoriten hinzugefügt", Toast.LENGTH_LONG).show();
                                 }else{
                                     AlertDialog alertDialog = new AlertDialog.Builder(Ortliste.this).create();
                                     alertDialog.setTitle("Fehler");
@@ -63,12 +64,13 @@ public class Ortliste extends AppCompatActivity {
                                             new DialogInterface.OnClickListener() {
                                                 public void onClick(DialogInterface dialog, int which) {
                                                     dialog.dismiss();
+
                                                 }
                                             });
                                     alertDialog.show();
                                 }
 
-                                Toast.makeText(getApplicationContext(), "Zu Favoriten hinzugefügt", Toast.LENGTH_LONG).show();
+
                                 dialog.dismiss();
                             }
                         });
@@ -119,6 +121,11 @@ public class Ortliste extends AppCompatActivity {
         }
 
 
+    }
+
+    public void addOrtClick(View v){
+        Intent intent = new Intent(getApplicationContext(), CreateActivity.class);
+        startActivity(intent);
     }
 
     public void fillOrte(){
