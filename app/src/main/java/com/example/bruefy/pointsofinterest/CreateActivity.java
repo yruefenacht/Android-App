@@ -1,28 +1,21 @@
 package com.example.bruefy.pointsofinterest;
 
-<<<<<<< HEAD
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.FragmentTransaction;
-=======
 import android.content.Intent;
->>>>>>> origin/master
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-<<<<<<< HEAD
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
-=======
->>>>>>> origin/master
 
 public class CreateActivity extends AppCompatActivity {
 
     Button button;
     int day_x,month_x,year_x;
-    static final int DILOG_ID = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,29 +23,6 @@ public class CreateActivity extends AppCompatActivity {
         setContentView(R.layout.activity_create);
     }
 
-<<<<<<< HEAD
-    public void showDialogOnButtonClick(View v){
-        button = (Button)findViewById(R.id.datebutton);
-
-
-
-        /*button.setOnClickListener(
-            new View.OnClickListener() {
-                @Override
-                public void onCreate(View v) {
-                    showDialog(DILOG_ID);
-                }
-            }
-
-        );*/
-    }
-
-    @Override
-    protected Dialog onCreateDialog(int id) {
-        if(id == DILOG_ID)
-            return new DatePickerDialog(this, dpickerListener.get(), day_x,month_x,year_x);
-        return null;
-    }
 
     public final ThreadLocal<DatePickerDialog.OnDateSetListener> dpickerListener
             = new ThreadLocal<DatePickerDialog.OnDateSetListener>() {
@@ -69,8 +39,6 @@ public class CreateActivity extends AppCompatActivity {
             };
         }
     };
-
-=======
 
 
     public void ButtonClick(View v){
@@ -100,5 +68,4 @@ public class CreateActivity extends AppCompatActivity {
 
 
     }
->>>>>>> origin/master
 }
