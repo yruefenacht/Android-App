@@ -2,6 +2,7 @@ package com.example.bruefy.pointsofinterest;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
@@ -38,10 +39,6 @@ import java.util.List;
 import java.util.Locale;
 
 public class CreateActivity extends ActionBarActivity {
-
-
-
-
 
     Button button;
     int day_x,month_x,year_x;
@@ -263,25 +260,25 @@ public class CreateActivity extends ActionBarActivity {
         return newLocation;
     }
 
-    private String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/";
+    private String path = Environment.getExternalStorageDirectory().getAbsolutePath();
+    String filename = "data";
+    File file = new File(context.getFilesDir(), filename);
 
     public void WriteInTextFile(String title, String start, String ende, LatLng coordinates){
 
-        File file = new File(path + "/daten.txt");
-        if(! file.exists()){
             try {
-                file.createNewFile();
-            }catch(IOException e){
-                Log.e(TAG, "Error");
+                outputStream= openFileOutput(filename, Context.MODE_PRIVATE);
+                outputStream.write=(title.getBytes());
+                outputStream.write=(start.getBytes());
+                outputStream.write=(ende.getBytes());
+                outputStream.write=(coordinates.getClass());
+                outputStream.close();
+            }catch(Exception e){
+                e.printStackTrace();
             }
         }
-        String saveText = title;
 
-        Save (file, saveText);
-
-    }
-
-    public void Save(File file, String data){
+    /*public void Save(File file, String data){
         FileOutputStream fos = null;
         try{
             fos = new FileOutputStream(file);
@@ -289,7 +286,7 @@ public class CreateActivity extends ActionBarActivity {
             e.printStackTrace();
         }
         try{
-            try{
+            try{*/
                 /*for(int i = 0; i<data.length; i++){
                     fos.write(data[i].getBytes());
                     if(i < data.length - 1){
@@ -298,7 +295,7 @@ public class CreateActivity extends ActionBarActivity {
                 }*/
                 fos.write(data.getBytes());
 
-            }catch(IOException e){
+            /*}catch(IOException e){
                 e.printStackTrace();
             }
         }finally {
@@ -315,5 +312,5 @@ public class CreateActivity extends ActionBarActivity {
     public void checkIfEmpty(View v){
         createcounter++;
     }
-
+*/
 }
