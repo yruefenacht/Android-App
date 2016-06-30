@@ -56,13 +56,14 @@
         <activity android:name=".MainActivity" />
         <activity
             android:name=".Ortliste"
-            android:label="Termine" />
+            android:label="Orte" />
         <activity
             android:name=".CreateActivity"
-            android:label="Ort hinzufügen" />
+            android:label="Points Of Interest" />
         <activity
             android:name=".Favoritenliste"
-            android:label="Favoriten" />
+            android:label="Termine" />
+        <activity android:name=".Appointment"></activity>
     </application>
 
 </manifest>

@@ -33,7 +33,7 @@ import java.util.List;
 
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback {
 
-
+    //Google Map Activity
     private GoogleMap mMap;
     private String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/";
 
@@ -52,17 +52,18 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         File dir = new File(path);
         dir.mkdirs();
 
-
+        //test
         File file = new File(path + "/daten.txt");
         if(file.exists()){
             String[] data = Load(file);
             Toast.makeText(getApplicationContext(), data[0], Toast.LENGTH_LONG).show();
         }
 
+        //Prüfe Netzwerkstatus
         boolean network = isNetworkAvailable();
         checkNetwork(network);
 
-
+        //ActionBar Schatten
         getSupportActionBar().setElevation(0);
 
     }
@@ -108,6 +109,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         return array;
     }
 
+
     public void checkNetwork(boolean net){
         if(! net){
             AlertDialog alertDialog = new AlertDialog.Builder(MapsActivity.this).create();
@@ -123,7 +125,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
     }
 
-
+    //Menu Button ClickEventHandler
     public void ButtonClick(View v){
         Button button = (Button) findViewById(v.getId());
 
@@ -137,10 +139,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         switch(button.getText().toString()){
             case "1":
                 startActivity(maps);
-                overridePendingTransition(0, 0);
-                break;
-            case "2":
-                startActivity(create);
                 overridePendingTransition(0, 0);
                 break;
             case "3":
@@ -169,10 +167,15 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     private boolean isNetworkAvailable() {
-        ConnectivityManager connectivityManager
-                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        //Prüfe Netzwerkstatus
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
-        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+
+        if(activeNetworkInfo != null && activeNetworkInfo.isConnected()){
+            return true;//Wenn verbunden
+        }else{
+            return false;
+        }
     }
 
     /**
@@ -186,7 +189,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
+        mMap = googleMap;// Initialisiere mMap
 
         /*
         if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
@@ -201,14 +204,11 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             }
         }*/
 
-
-
-
         /*
         Bibliothek.Coords.add(new LatLng(-200, 100));
         Bibliothek.title.add("Test");
         */
-        mMap.clear();
+        mMap.clear(); //Cleare Alle Marker und setze sie neu
 
         mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
         boolean markerset = false;
@@ -218,27 +218,28 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
                 LatLng currenLocation = Bibliothek.Coords.get(i);
                 String title = Bibliothek.title.get(i);
-                String von = Bibliothek.start.get(i);
-                String ende = Bibliothek.ende.get(i);
-                String termin = von+" - "+ende;
+
+
+
 
                 for(int y = 0; y < Bibliothek.favoriten.size(); y++){
                     String line = Bibliothek.favoriten.get(y);
-                    String split[] = line.split("\r\n");
-                    String favtitle = split[1];
 
 
-                    if(favtitle.equals(title)){
+                    //Prüfe ob aktuelle Liste in den favoriten vorhanden ist
+                    if(line.equals(title)){
 
 
-                        mMap.addMarker(new MarkerOptions().position(currenLocation).title(title).snippet(termin).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
+                        mMap.addMarker(new MarkerOptions().position(currenLocation).title(title).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
                         markerset = true;
+                        //Wenn ja setze markset auf true, damit der marker nicht überschrieben wird
                     }
                 }
                 if(! markerset){
-                    mMap.addMarker(new MarkerOptions().position(currenLocation).title(title).snippet(termin).icon(BitmapDescriptorFactory.defaultMarker()));
+                    mMap.addMarker(new MarkerOptions().position(currenLocation).title(title).icon(BitmapDescriptorFactory.defaultMarker()));
                 }
 
+                //Bewege Kamera auf letzten Punkt von der Liste
                 mMap.moveCamera(CameraUpdateFactory.newLatLng(currenLocation));
                 markerset = false;
             }

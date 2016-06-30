@@ -16,5 +16,6 @@ public class Bibliothek {
     public static List<String> favoriten = new ArrayList<String>();
     public static List<String> start = new ArrayList<String>();
     public static List<String> ende = new ArrayList<String>();
+    public static List<String> terminort = new ArrayList<String>();
 
 }

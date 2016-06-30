@@ -10,6 +10,8 @@ import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
 
+    //Diese Activity wird nicht verwendet
+
     private final static String Map = "Map";
     private final static String Create = "Eriegnis erstellen";
     private final static String ortliste = "Ort und Ereignisse";
@@ -42,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
           Intent create = new Intent(getApplicationContext(), CreateActivity.class);
           Intent orte = new Intent(getApplicationContext(), Ortliste.class);
           Intent fav = new Intent(getApplicationContext(), MainActivity.class);
+
 
 
           String selected = parent.getItemAtPosition(position).toString();
