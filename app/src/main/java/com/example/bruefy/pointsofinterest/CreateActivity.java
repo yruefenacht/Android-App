@@ -1,8 +1,5 @@
 package com.example.bruefy.pointsofinterest;
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
@@ -12,18 +9,10 @@ import android.graphics.drawable.GradientDrawable;
 import android.location.Geocoder;
 import android.os.Environment;
 import android.support.v7.app.ActionBarActivity;
-=======
-<<<<<<< HEAD
->>>>>>> origin/master
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.FragmentTransaction;
 import android.content.Intent;
-<<<<<<< HEAD
-=======
->>>>>>> origin/master
->>>>>>> origin/master
->>>>>>> origin/master
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -31,11 +20,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.gms.identity.intents.Address;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.wallet.MaskedWallet;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -50,17 +39,8 @@ import java.util.Locale;
 
 public class CreateActivity extends ActionBarActivity {
 
-=======
-<<<<<<< HEAD
-import android.widget.DatePicker;
-import android.widget.EditText;
-import android.widget.Toast;
-<<<<<<< HEAD
-=======
-=======
->>>>>>> origin/master
->>>>>>> origin/master
->>>>>>> origin/master
+
+
 
 
     Button button;
@@ -130,9 +110,7 @@ import android.widget.Toast;
 
 
     }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
+
     Calendar myCalendar = Calendar.getInstance();
     private String pressedButton;
 
@@ -338,12 +316,4 @@ import android.widget.Toast;
         createcounter++;
     }
 
-
-
-
-
-=======
->>>>>>> origin/master
->>>>>>> origin/master
->>>>>>> origin/master
 }
