@@ -6,72 +6,30 @@
 
     tools:context="com.example.bruefy.pointsofinterest.CreateActivity">
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_gravity="center_horizontal"
-        android:background="@color/colorPrimary">
-
-        <Button
-            android:layout_width="fill_parent"
-            android:layout_weight=".25"
-            android:padding="30dp"
-            android:layout_height="wrap_content"
-            android:text="1"
-            android:onClick="ButtonClick"
-            android:id="@+id/mapbutton"
-            android:background="@color/colorPrimary"
-            android:drawableLeft="@drawable/ic_person_pin_circle_black_24dp"/>
-
-        <Button
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
-$            android:layout_height="wrap_content"
-            android:layout_weight=".25"
-            android:padding="30dp"
-            android:text="2"
-            android:onClick="ButtonClick"
-            android:id="@+id/createbutton"
-            android:background="@color/colorPrimary"
-            android:drawableLeft="@drawable/ic_add_box_white_24dp"/>
-
-        <Button
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight=".25"
-            android:padding="30dp"
-            android:text="3"
-            android:id="@+id/listbutton"
-            android:onClick="ButtonClick"
-            android:background="@color/colorPrimary"
-
-            android:drawableLeft="@drawable/ic_list_black_24dp" />
-
-        <Button
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight=".25"
-            android:padding="30dp"
-            android:text="4"
-            android:id="@+id/favbutton"
-            android:onClick="ButtonClick"
-            android:background="@color/colorPrimary"
-            android:drawableLeft="@drawable/ic_star_black_24dp"/>
-    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Ort hinzufügen"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="30dp"
+        android:layout_centerInParent="true"/>
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="100dp"
         android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
         android:overScrollMode="ifContentScrolls"
         android:weightSum="1">
+
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -95,7 +53,7 @@ $            android:layout_height="wrap_content"
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ort"
+        android:text="Ortsname(Stadt, Land oder Dorf)"
         android:id="@+id/o"
         android:layout_marginTop="45dp"
         android:layout_below="@+id/t"
@@ -111,29 +69,6 @@ $            android:layout_height="wrap_content"
         android:editable="true"
         android:onClick="checkIfEmpty" />
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Beginn"
-            android:tag="start"
-            android:id="@+id/datebutton"
-            android:layout_alignTop="@+id/b"
-            android:layout_alignLeft="@+id/ort"
-            android:layout_alignStart="@+id/ort"
-            android:layout_gravity="center_horizontal"
-            android:onClick="DatePicked" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Ende"
-        android:tag="ende"
-        android:id="@+id/datebutton2"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/datebutton"
-        android:layout_alignStart="@+id/datebutton"
-        android:layout_gravity="center_horizontal"
-        android:onClick="DatePicked" />
 
         <Button
             android:layout_width="match_parent"
@@ -145,6 +80,10 @@ $            android:layout_height="wrap_content"
             android:background="@color/colorPrimary"
             android:onClick="addLocation"
             android:textColor="#ffffff" />
+
+
     </LinearLayout>
+
+
 
 </RelativeLayout>

@@ -28,33 +28,38 @@ public class Ortliste extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ortliste);
+
         fillOrte();
 
         File dir = new File(path);
         dir.mkdirs();
 
-
+        //ClickListener auf ListView
         ListView ortliste = (ListView) findViewById(R.id.ortliste);
         ortliste.setOnItemClickListener(new AdapterView.OnItemClickListener(){
 
             @Override
             public void onItemClick(AdapterView parent, View view, int position, long id) {
+                //Hole Inhalt des Selektierten Listenelements
                 final String selected = parent.getItemAtPosition(position).toString();
+                //Neues PopUp Fenster
                 AlertDialog alertDialog = new AlertDialog.Builder(Ortliste.this).create();
                 alertDialog.setTitle("Favoriten");
                 alertDialog.setMessage("Wollen Sie diesen Eintrag den Favoriten hinzufügen?");
-                alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Ja",
+                alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Ja", //Positiver Button
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 boolean add = true;
                                 for(int i = 0; i < Bibliothek.favoriten.size(); i++){
                                     if(selected.equals(Bibliothek.favoriten.get(i))){
+                                        //Schaue ob das Ausgewählte ListView Element schon in der Favoritenliste vorhanden ist
                                         add = false;
                                     }
 
                                 }
-                                if(add){
+                                if(add){//Wenn Ja
                                     Bibliothek.favoriten.add(selected);
+                                    Toast.makeText(getApplicationContext(), "Zu Favoriten hinzugefügt", Toast.LENGTH_LONG).show();
                                 }else{
                                     AlertDialog alertDialog = new AlertDialog.Builder(Ortliste.this).create();
                                     alertDialog.setTitle("Fehler");
@@ -63,16 +68,17 @@ public class Ortliste extends AppCompatActivity {
                                             new DialogInterface.OnClickListener() {
                                                 public void onClick(DialogInterface dialog, int which) {
                                                     dialog.dismiss();
+
                                                 }
                                             });
                                     alertDialog.show();
                                 }
 
-                                Toast.makeText(getApplicationContext(), "Zu Favoriten hinzugefügt", Toast.LENGTH_LONG).show();
+
                                 dialog.dismiss();
                             }
                         });
-                alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Abbrechen",
+                alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Abbrechen",//Zurück
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
 
@@ -83,6 +89,7 @@ public class Ortliste extends AppCompatActivity {
             }
         });
 
+        //ActionBar Schatten
         getSupportActionBar().setElevation(0);
 
 
@@ -90,6 +97,7 @@ public class Ortliste extends AppCompatActivity {
 
 
     public void ButtonClick(View v){
+        //Hole geklickten Button
         Button button = (Button) findViewById(v.getId());
 
         Intent maps = new Intent(getApplicationContext(), MapsActivity.class);
@@ -102,11 +110,7 @@ public class Ortliste extends AppCompatActivity {
         switch(button.getText().toString()){
             case "1":
                 startActivity(maps);
-                overridePendingTransition(0, 0);
-                break;
-            case "2":
-                startActivity(create);
-                overridePendingTransition(0, 0);
+                overridePendingTransition(0, 0);//Activity Transition
                 break;
             case "3":
                 startActivity(orte);
@@ -121,6 +125,12 @@ public class Ortliste extends AppCompatActivity {
 
     }
 
+    public void addOrtClick(View v){
+        //Plus Button geklickt
+        Intent intent = new Intent(getApplicationContext(), CreateActivity.class);
+        startActivity(intent);
+    }
+
     public void fillOrte(){
 
         ArrayAdapter menuadapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
@@ -130,16 +140,12 @@ public class Ortliste extends AppCompatActivity {
         if(Bibliothek.title.isEmpty()){
             menuadapter.add("Noch keine Orte Hinzugefügt");
         }else{
-            for(int i = 0; i < Bibliothek.title.size(); i++){
-                String text = Bibliothek.title.get(i);
-                String inputold = "\r\n"+text +"\r\n"+Bibliothek.start.get(i)+" - "+Bibliothek.ende.get(i)+"\r\n";
-                String input = inputold.replaceAll("[ \t]+(\r\n?|\n)", "$1");
+            for(int i = 0; i < Bibliothek.title.size(); i++){//Fülle ListView anhand von der List in Bibliothek
+                String title = Bibliothek.title.get(i);
 
-                menuadapter.add(input);
+                menuadapter.add(title);
             }
         }
-
-
 
         ortliste.setAdapter(menuadapter);
 

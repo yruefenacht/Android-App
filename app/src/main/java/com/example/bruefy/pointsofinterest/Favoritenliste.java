@@ -18,6 +18,7 @@ public class Favoritenliste extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_favoriten);
+
         fillListe();
 
         File dir = new File(path);
@@ -44,10 +45,6 @@ public class Favoritenliste extends AppCompatActivity {
                 startActivity(maps);
                 overridePendingTransition(0, 0);
                 break;
-            case "2":
-                startActivity(create);
-                overridePendingTransition(0, 0);
-                break;
             case "3":
                 startActivity(orte);
                 overridePendingTransition(0, 0);
@@ -68,16 +65,22 @@ public class Favoritenliste extends AppCompatActivity {
         ListView faves = (ListView) findViewById(R.id.favoriten);
 
 
-        if(Bibliothek.favoriten.isEmpty()){
-            menuadapter.add("Keine Favoriten");
+        if(Bibliothek.terminort.isEmpty()){
+            menuadapter.add("Keine Termine vorhanden");
         }else{
-            for(int i = 0; i < Bibliothek.favoriten.size(); i++){
-                menuadapter.add(Bibliothek.favoriten.get(i));
+            for(int i = 0; i < Bibliothek.terminort.size(); i++){ //Lese Favoriten Liste aus der Bibliothek aus
+                menuadapter.add(Bibliothek.terminort.get(i)+"  "+Bibliothek.start.get(i)+" - "+Bibliothek.ende.get(i));
+                
             }
         }
 
 
 
         faves.setAdapter(menuadapter);
+    }
+
+    public void addTermin(View v){
+        Intent intent = new Intent(getApplicationContext(), Appointment.class);
+        startActivity(intent);
     }
 }
