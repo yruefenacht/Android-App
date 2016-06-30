@@ -20,7 +20,7 @@
             android:onClick="ButtonClick"
             android:id="@+id/mapbutton"
             android:background="@color/colorPrimary"
-            android:drawableLeft="@android:drawable/ic_menu_mylocation"/>
+            android:drawableLeft="@drawable/ic_person_pin_circle_white_24dp"/>
 
         <Button
             android:layout_width="fill_parent"
@@ -31,7 +31,7 @@
             android:onClick="ButtonClick"
             android:id="@+id/createbutton"
             android:background="@color/colorPrimary"
-            android:drawableLeft="@android:drawable/ic_menu_add"/>
+            android:drawableLeft="@drawable/ic_add_box_black_24dp"/>
 
         <Button
             android:layout_width="fill_parent"
@@ -42,7 +42,7 @@
             android:id="@+id/listbutton"
             android:onClick="ButtonClick"
             android:background="@color/colorPrimary"
-            android:drawableLeft="@android:drawable/ic_menu_info_details"/>
+            android:drawableLeft="@drawable/ic_list_black_24dp"/>
 
         <Button
             android:layout_width="fill_parent"
@@ -53,15 +53,14 @@
             android:id="@+id/favbutton"
             android:onClick="ButtonClick"
             android:background="@color/colorPrimary"
-            android:drawableLeft="@android:drawable/ic_menu_recent_history"/>
+            android:drawableLeft="@drawable/ic_star_black_24dp"/>
     </LinearLayout>
 
-    <LinearLayout
+    <RelativeLayout
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight=".100"
-        android:background="@color/colorPrimary">
+        >
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:map="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -70,5 +69,6 @@
     android:layout_width="387dp"
     android:layout_height="473dp"
     tools:context="com.example.bruefy.pointsofinterest.MapsActivity" />
-    </LinearLayout>
+
+    </RelativeLayout>
 </LinearLayout>

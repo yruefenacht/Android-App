@@ -22,7 +22,7 @@
             android:onClick="ButtonClick"
             android:id="@+id/mapbutton"
             android:background="@color/colorPrimary"
-            android:drawableLeft="@android:drawable/ic_menu_mylocation"/>
+            android:drawableLeft="@drawable/ic_person_pin_circle_black_24dp"/>
 
         <Button
             android:layout_width="fill_parent"
@@ -34,7 +34,7 @@ $            android:layout_height="wrap_content"
             android:onClick="ButtonClick"
             android:id="@+id/createbutton"
             android:background="@color/colorPrimary"
-            android:drawableLeft="@android:drawable/ic_menu_add"/>
+            android:drawableLeft="@drawable/ic_add_box_white_24dp"/>
 
         <Button
             android:layout_width="fill_parent"
@@ -45,7 +45,8 @@ $            android:layout_height="wrap_content"
             android:id="@+id/listbutton"
             android:onClick="ButtonClick"
             android:background="@color/colorPrimary"
-            android:drawableLeft="@android:drawable/ic_menu_info_details"/>
+
+            android:drawableLeft="@drawable/ic_list_black_24dp" />
 
         <Button
             android:layout_width="fill_parent"
@@ -56,7 +57,7 @@ $            android:layout_height="wrap_content"
             android:id="@+id/favbutton"
             android:onClick="ButtonClick"
             android:background="@color/colorPrimary"
-            android:drawableLeft="@android:drawable/ic_menu_recent_history"/>
+            android:drawableLeft="@drawable/ic_star_black_24dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -69,6 +70,7 @@ $            android:layout_height="wrap_content"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
+        android:overScrollMode="ifContentScrolls"
         android:weightSum="1">
 
     <TextView
@@ -87,7 +89,8 @@ $            android:layout_height="wrap_content"
         android:id="@+id/titel"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:editable="true" />
+        android:editable="true"
+        android:onClick="checkIfEmpty" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -105,35 +108,43 @@ $            android:layout_height="wrap_content"
         android:id="@+id/ort"
         android:layout_alignTop="@+id/o"
         android:layout_centerHorizontal="true"
-        android:editable="true" />
+        android:editable="true"
+        android:onClick="checkIfEmpty" />
 
         <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Beginn"
-        android:id="@+id/datebutton"
-        android:layout_alignTop="@+id/b"
-        android:layout_alignLeft="@+id/ort"
-        android:layout_alignStart="@+id/ort"
-        android:layout_gravity="center_horizontal" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Beginn"
+            android:tag="start"
+            android:id="@+id/datebutton"
+            android:layout_alignTop="@+id/b"
+            android:layout_alignLeft="@+id/ort"
+            android:layout_alignStart="@+id/ort"
+            android:layout_gravity="center_horizontal"
+            android:onClick="DatePicked" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Ende"
+        android:tag="ende"
         android:id="@+id/datebutton2"
         android:layout_centerVertical="true"
         android:layout_alignLeft="@+id/datebutton"
         android:layout_alignStart="@+id/datebutton"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:onClick="DatePicked" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Hinzufügen"
-            android:id="@+id/button"
+            android:id="@+id/hinzufuegen"
             android:layout_weight="0.17"
-            android:background="@color/colorPrimary" />
+            android:layout_marginTop="15dp"
+            android:background="@color/colorPrimary"
+            android:onClick="addLocation"
+            android:textColor="#ffffff" />
     </LinearLayout>
 
 </RelativeLayout>

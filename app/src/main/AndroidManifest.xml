@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.bruefy.pointsofinterest">
+    package="com.example.bruefy.pointsofinterest"
+    >
 
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
@@ -44,9 +45,10 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
+
         <activity
             android:name=".MapsActivity"
-            android:label="@string/title_activity_maps">
+            android:label="Points Of Interest">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -59,10 +61,10 @@
             android:label="Meine Orte" />
         <activity
             android:name=".CreateActivity"
-            android:label="Ort Hinzufügen" />
+            android:label="Ort hinzufügen" />
         <activity
             android:name=".Favoritenliste"
-            android:label="Favoriten"></activity>
+            android:label="Favoriten" />
     </application>
 
 </manifest>
