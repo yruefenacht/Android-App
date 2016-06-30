@@ -22,7 +22,7 @@
             android:onClick="ButtonClick"
             android:id="@+id/mapbutton"
             android:background="@color/colorPrimary"
-            android:drawableLeft="@android:drawable/ic_menu_mylocation"/>
+            android:drawableLeft="@drawable/ic_person_pin_circle_black_24dp"/>
 
         <Button
             android:layout_width="fill_parent"
@@ -33,7 +33,7 @@
             android:onClick="ButtonClick"
             android:id="@+id/createbutton"
             android:background="@color/colorPrimary"
-            android:drawableLeft="@android:drawable/ic_menu_add"/>
+            android:drawableLeft="@drawable/ic_add_box_black_24dp"/>
 
         <Button
             android:layout_width="fill_parent"
@@ -44,7 +44,7 @@
             android:id="@+id/listbutton"
             android:onClick="ButtonClick"
             android:background="@color/colorPrimary"
-            android:drawableLeft="@android:drawable/ic_menu_info_details"/>
+            android:drawableLeft="@drawable/ic_list_black_24dp"/>
 
         <Button
             android:layout_width="fill_parent"
@@ -55,7 +55,7 @@
             android:id="@+id/favbutton"
             android:onClick="ButtonClick"
             android:background="@color/colorPrimary"
-            android:drawableLeft="@android:drawable/ic_menu_recent_history"/>
+            android:drawableLeft="@drawable/ic_star_white_24dp"/>
     </LinearLayout>
     <LinearLayout
         android:orientation="vertical"
@@ -70,5 +70,10 @@
 
         >
 
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/favoriten"
+            android:layout_gravity="center_horizontal" />
     </LinearLayout>
 </RelativeLayout>
